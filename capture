@@ -1,0 +1,2 @@
+timestr=$(date +"%y%m%d_%H%M%S")
+./capture.sh $1_$timestr.pcapng

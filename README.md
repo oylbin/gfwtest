@@ -1,5 +1,7 @@
 # 科学上网经验分享演示命令
 
+http://packetlife.net/blog/2008/oct/18/cheat-sheets-tcpdump-and-wireshark/
+
 ### 演示DNS污染
 
 抓包
@@ -56,7 +58,7 @@ wireshark打开抓包文件看结果
 
     curl --connect-timeout 10 -i http://www.881903.com/Page/ZH-TW/index.aspx
     
-打开抓包文件看结果
+打开抓包文件看结果，可以看到RST现象
 
 
 # 演示暂停
@@ -83,6 +85,11 @@ wireshark打开抓包文件看结果
     ifconfig
 
 打开抓包文件看结果，协议容易识别
+
+* wireshark打开文件之后，用OpenVPN解析协议
+* 找比较大的数据包，传输内容里能看到明文的openvpn字样
+
+
 
 # 演示暂停
 # 演示暂停

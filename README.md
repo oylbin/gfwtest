@@ -173,6 +173,11 @@ proxy上启动server
 
     (cd ss && docker run --rm -it -v /root/ss:/config --name ss-server --net=host  hitian/ss ss-server -c /config/server_without_obfs.json )
 
+如果上面的命令报错提示`The container name "/ss-server" is already in use by ...`，那么先执行下面的命令把之前的docker进程杀死
+
+    docker stop ss-server
+    docker rm ss-server
+    
 本地启动client
 
     docker run --rm -it -v /Users/Shared/科学上网分享:/config --name ss-client -p 10080:10080  hitian/ss ss-local -c /config/client.json -b 0.0.0.0
@@ -196,7 +201,12 @@ wireshark打开文件看抓包数据
 proxy上启动server
 
     (cd ss && docker run --rm -it -v /root/ss:/config --name ss-server --net=host hitian/ss ss-server -c /config/server.json)
-    
+    
+如果上面的命令报错提示`The container name "/ss-server" is already in use by ...`，那么先执行下面的命令把之前的docker进程杀死
+
+    docker stop ss-server
+    docker rm ss-server
+
 本地启动client
 
     docker run --rm -it -v /Users/Shared/科学上网分享:/config --name ss-client -p 10080:10080  hitian/ss ss-local -c /config/client_obfs.json -b 0.0.0.0
